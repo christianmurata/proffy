@@ -14,6 +14,8 @@ export default class ConnectionsController {
     .then(rows => {
       res.json(rows);
     })
+
+    .catch(err => res.status(400).json({ message: err.message}));
   }
 
   create(req: Request, res: Response) {
